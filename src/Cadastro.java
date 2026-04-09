@@ -10,6 +10,11 @@ public class Cadastro {
         this.cpf = cpf;
     }
 
+    public Cadastro() {
+        
+    }
+    
+
     public String getNome() {
         return nome;
     }
