@@ -1,33 +1,40 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
+
 public class Cadastro {
    ArrayList<Cadastro> lista = new ArrayList<>(); 
+
     private String nome;
     private int idade;
     private String cpf;
 
     // funções 
-    public void listar(){
-      if (lista.isEmpty()){
-          System.out.println("Não há nenhum Cadastro: ");
-          
-      }else{
-          System.out.println("Lista de Cadastro: ");
-          
-      }
-     
-    }
-     public void cadastrar(){
+    public void listar() {
+        if (lista.isEmpty()) {
+            System.out.println("Não há nenhum Cadastro: ");
+        } else {
+            System.out.println("Lista de Cadastro: ");  
+                for(Cadastro u : lista){
+                    exibir(u);
+                }
+            }
+
+        }
+
+    public void cadastrar(){
          Scanner s = new Scanner(System.in);
          System.out.println("Digite o seu nome:");
-         String nome;
-         nome = s.nextLine();
-         System.out.println("Digite sua idade:");
-         int idade;
-         idade = s.nextInt();
+         String nome = s.nextLine();
+         
          System.out.println("Digite seu cpf: ");
-         String cpf;
-         cpf = s.nextLine();
+         String cpf = s.nextLine();
+         
+         System.out.println("Digite sua idade:");
+         int idade = s.nextInt();
+         
+         
          Cadastro u = new Cadastro(nome, idade, cpf);
          lista.add(u);
      }
@@ -39,9 +46,14 @@ public class Cadastro {
  
     }
     
-
     public Cadastro() {
         
+    }
+    
+    public void exibir(Cadastro u){
+        System.out.println(u.getNome());
+        System.out.println(u.getIdade());
+        System.out.println(u.getCpf());
     }
     
 
@@ -68,8 +80,5 @@ public class Cadastro {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
-    
-    
     
 }
