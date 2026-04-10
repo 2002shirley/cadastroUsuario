@@ -1,14 +1,44 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Cadastro {
-    
+   ArrayList<Cadastro> lista = new ArrayList<>(); 
     private String nome;
     private int idade;
     private String cpf;
 
-    public Cadastro(String nome, int idade, String cpf) {
-        this.nome = nome;
-        this.idade = idade;
-        this.cpf = cpf;
+    // funções 
+    public void listar(){
+      if (lista.isEmpty()){
+          System.out.println("Não há nenhum Cadastro: ");
+          
+      }else{
+          System.out.println("Lista de Cadastro: ");
+          
+      }
+     
     }
+     public void cadastrar(){
+         Scanner s = new Scanner(System.in);
+         System.out.println("Digite o seu nome:");
+         String nome;
+         nome = s.nextLine();
+         System.out.println("Digite sua idade:");
+         int idade;
+         idade = s.nextInt();
+         System.out.println("Digite seu cpf: ");
+         String cpf;
+         cpf = s.nextLine();
+         Cadastro u = new Cadastro(nome, idade, cpf);
+         lista.add(u);
+     }
+     
+    public Cadastro(String nome, int idade, String cpf) {
+        this.setNome (nome);
+        this.setIdade (idade);
+        this.setCpf (cpf);
+ 
+    }
+    
 
     public Cadastro() {
         
