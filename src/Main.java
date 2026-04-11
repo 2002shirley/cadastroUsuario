@@ -12,7 +12,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int escolha;
         do {
-            System.out.println("1 - Cadastrar usuário \n2 - Listar usuários \n3 - Sair");
+            System.out.println("-------------------------------------");
+            System.out.println("1-Cadastrar usuário\n2-Listar usuários\n3-Sair");
+            System.out.println("");
             System.out.print("Digite aqui: ");
             escolha = scan.nextInt();
             
